@@ -2,9 +2,10 @@ package com.marks.genericstore.model;
 
 import java.util.UUID;
 
+import com.marks.genericstore.model.enums.ERole;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,18 +14,14 @@ import lombok.Setter;
 
 @Getter
 @Setter
+@Entity
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(name = "vendedor")
-public class Vendedor {
-    
+@Table(name = "permissao")
+public class Permissao {
+
     @Id
     private UUID id;
-    private String nome;
-    private String email;
-    private String telefone;
 
-    @OneToOne
-    private Usuario usuario;
+    private ERole name;
 }
